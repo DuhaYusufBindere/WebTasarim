@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karma Admin Paneli</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <link rel="stylesheet" href="css/linearicons.css">
+    
+    <style>
+        body { background-color: #f1f4f7; }
+        .sidebar {
+            min-height: 100vh;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            padding-top: 20px;
+        }
+        .sidebar .nav-link {
+            color: #333;
+            font-weight: 500;
+            padding: 15px 20px;
+            border-left: 4px solid transparent;
+        }
+        .sidebar .nav-link:hover, .sidebar .nav-link.active {
+            background-color: #f9f9ff;
+            color: #ffba00; /* Karma tema rengi */
+            border-left-color: #ffba00;
+        }
+        .sidebar i { margin-right: 10px; }
+        .admin-header {
+            background: #fff;
+            padding: 15px 30px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        .card { border: none; box-shadow: 0 2px 10px rgba(0,0,0,0.05); margin-bottom: 20px; }
+        .card-header { background-color: #fff; border-bottom: 1px solid #eee; font-weight: bold; }
+    </style>
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2 sidebar d-none d-md-block">
+                <div class="text-center mb-4">
+                    <img src="img/logo.png" alt="Karma Logo" style="max-width: 120px;">
+                    <h6 class="mt-2 text-muted">Yönetim Paneli</h6>
+                </div>
+                <nav class="nav flex-column">
+                    <a class="nav-link active" href="#" onclick="showSection('dashboard')"><i class="lnr lnr-home"></i> Gösterge Paneli</a>
+                    <a class="nav-link" href="#" onclick="showSection('products')"><i class="lnr lnr-shirt"></i> Ürünler</a>
+                    <a class="nav-link" href="#" onclick="showSection('orders')"><i class="lnr lnr-cart"></i> Siparişler</a>
+                    <a class="nav-link" href="#" onclick="showSection('announcements')"><i class="lnr lnr-bullhorn"></i> Duyurular</a>
+                    <a class="nav-link" href="#" onclick="showSection('blog')"><i class="lnr lnr-book"></i> Blog</a>
+                    <a class="nav-link" href="#" onclick="showSection('settings')"><i class="lnr lnr-cog"></i> Genel Ayarlar</a>
+                    <a class="nav-link text-danger" href="index.html"><i class="lnr lnr-exit"></i> Çıkış Yap</a>
+                </nav>
+            </div>
+
+            <div class="col-md-10 ml-auto">
+                <div class="admin-header d-flex justify-content-between align-items-center">
+                    <h4>Hoşgeldiniz, Admin</h4>
+                    <button class="btn btn-sm btn-outline-secondary">Siteyi Görüntüle</button>
+                </div>
+
+                <div id="main-content">
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/vendor/jquery-2.2.4.min.js"></script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+    
+    <script>
+        // Basit bir sekme geçiş sistemi
+        function showSection(sectionId) {
+            $('.nav-link').removeClass('active');
+            event.target.closest('a').classList.add('active');
+            
+            // Gerçek bir backend olmadığı için içeriği JS ile simüle ediyoruz
+            let content = '';
+            
+            if(sectionId === 'dashboard') {
+                content = `
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="card text-white bg-primary mb-3">
+                                <div class="card-body">
+                                    <h5 class="card-title">Toplam Sipariş</h5>
+                                    <h2 class="display-4">152</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card text-white bg-success mb-3">
+                                <div class="card-body">
+                                    <h5 class="card-title">Toplam Gelir</h5>
+                                    <h2 class="display-4">₺12K</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card text-white bg-warning mb-3">
+                                <div class="card-body">
+                                    <h5 class="card-title">Ürün Sayısı</h5>
+                                    <h2 class="display-4">45</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card text-white bg-info mb-3">
+                                <div class="card-body">
+                                    <h5 class="card-title">Yeni Mesaj</h5>
+                                    <h2 class="display-4">3</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            } else if (sectionId === 'products') {
+                content = getProductsHTML();
+            } else if (sectionId === 'announcements') {
+                content = getAnnouncementsHTML();
+            } else if (sectionId === 'settings') {
+                content = getSettingsHTML();
+            } else {
+                content = '<div class="alert alert-info">Bu modül yapım aşamasındadır.</div>';
+            }
+
+            $('#main-content').html(content);
+        }
+
+        // Sayfa yüklendiğinde dashboard'u aç
+        $(document).ready(function(){
+            showSection('dashboard');
+        });
+
+        // --- HTML ŞABLONLARI (Gerçek projede bunlar ayrı dosyalarda olur) ---
+
+        function getProductsHTML() {
+            return `
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <span>Ürün Listesi (Category.html)</span>
+                    <button class="btn btn-primary btn-sm">+ Yeni Ürün Ekle</button>
+                </div>
+                <div class="card-body">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Görsel</th>
+                                <th>Ürün Adı</th>
+                                <th>Fiyat</th>
+                                <th>İndirimli Fiyat</th>
+                                <th>Stok</th>
+                                <th>İşlemler</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><img src="img/product/p1.jpg" width="50"></td>
+                                <td>Adidas Yeni Hammer Taban</td>
+                                <td>$210.00</td>
+                                <td class="text-success">$150.00</td>
+                                <td><span class="badge badge-success">Var</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-info"><i class="fa fa-pencil"></i></button>
+                                    <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+                                </td>
+                            </tr>
+                             <tr>
+                                <td><img src="img/product/p2.jpg" width="50"></td>
+                                <td>Nike Air Max</td>
+                                <td>$180.00</td>
+                                <td>-</td>
+                                <td><span class="badge badge-danger">Tükendi</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-info"><i class="fa fa-pencil"></i></button>
+                                    <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>`;
+        }
+
+        function getAnnouncementsHTML() {
+            return `
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <span>Duyurular (Duyurular.html)</span>
+                    <button class="btn btn-primary btn-sm">+ Yeni Duyuru</button>
+                </div>
+                <div class="card-body">
+                    <div class="alert alert-warning">Buradan eklenen duyurular "Duyurular" sayfasında kart olarak listelenir.</div>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Tarih</th>
+                                <th>Başlık</th>
+                                <th>Kısa İçerik</th>
+                                <th>Dosya</th>
+                                <th>İşlemler</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>15 Kasım 2025</td>
+                                <td>Yıl Dönümü Kutlaması</td>
+                                <td>Tüm müşterilerimiz davetlidir...</td>
+                                <td><i class="fa fa-file-pdf-o"></i> sinav-takvimi.pdf</td>
+                                <td>
+                                    <button class="btn btn-sm btn-info">Düzenle</button>
+                                    <button class="btn btn-sm btn-danger">Sil</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>`;
+        }
+
+        function getSettingsHTML() {
+            return `
+            <div class="card">
+                <div class="card-header">Genel Site Ayarları (Contact.html & Footer)</div>
+                <div class="card-body">
+                    <form>
+                        <h6 class="mb-3">İletişim Bilgileri</h6>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label>Telefon</label>
+                                <input type="text" class="form-control" value="00 (440) 9865 562">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label>E-posta</label>
+                                <input type="email" class="form-control" value="destek@karma.com">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Adres</label>
+                            <input type="text" class="form-control" value="Bağdat Caddesi, Kadıköy, İstanbul">
+                        </div>
+                        
+                        <hr>
+                        <h6 class="mb-3">Sosyal Medya Linkleri</h6>
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label><i class="fa fa-facebook"></i> Facebook URL</label>
+                                <input type="text" class="form-control" value="https://facebook.com/...">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label><i class="fa fa-instagram"></i> Instagram URL</label>
+                                <input type="text" class="form-control" value="https://instagram.com/...">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label><i class="fa fa-twitter"></i> Twitter URL</label>
+                                <input type="text" class="form-control" value="https://twitter.com/...">
+                            </div>
+                        </div>
+                        
+                        <hr>
+                        <h6 class="mb-3">Harita Ayarları</h6>
+                        <div class="form-group">
+                             <label>Latitude (Enlem)</label>
+                             <input type="text" class="form-control" value="40.701083">
+                        </div>
+                         <div class="form-group">
+                             <label>Longitude (Boylam)</label>
+                             <input type="text" class="form-control" value="-74.1522848">
+                        </div>
+
+                        <button type="submit" class="btn btn-success mt-3">Ayarları Kaydet</button>
+                    </form>
+                </div>
+            </div>`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="tr" class="no-js">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="shortcut icon" href="img/fav.png">
+	<meta charset="UTF-8">
+	<title>Misyon & Vizyon - Karma Shop</title>
+	<link rel="stylesheet" href="css/linearicons.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/themify-icons.css">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/owl.carousel.css">
+	<link rel="stylesheet" href="css/nice-select.css">
+	<link rel="stylesheet" href="css/nouislider.min.css">
+	<link rel="stylesheet" href="css/main.css">
+    <style>
+        .organic-breadcrumb {
+            background: url(img/banner/common-banner.jpg) center no-repeat;
+            background-size: cover;
+            padding: 100px 0;
+        }
+		.organic-breadcrumb {
+            background: url(img/banner/common-banner.jpg) center no-repeat;
+            background-size: cover;
+            padding: 100px 0;
+        }
+        /* ... Sizin diğer css kodlarınız burada duruyor ... */
+        
+        #search_input_box {
+            display: none;
+        }
+
+        /* --- NAVBAR SABİTLEME KODU BAŞLANGICI --- */
+        .sticky-header {
+            position: fixed !important; /* Menüyü ekrana sabitler */
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 9999; /* Diğer tüm öğelerin üstünde durmasını sağlar */
+            background-color: #fff; /* Arka planı beyaz yapar, içerikle karışmaz */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Altına hafif bir gölge ekler */
+            transition: all 0.3s ease; /* Yumuşak geçiş sağlar */
+        }
+        
+        /* Menü sabitlenince sayfa içeriği yukarı kaymasın diye üstten boşluk */
+        body {
+            padding-top: 80px; 
+        }
+        .mv-box {
+            padding: 30px;
+            background: #fff;
+            box-shadow: 0px 10px 30px rgba(0,0,0,0.05);
+            border-radius: 10px;
+            height: 100%;
+            transition: all 0.3s;
+        }
+        .mv-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 15px 40px rgba(0,0,0,0.1);
+        }
+        .mv-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #222;
+        }
+        .mv-icon {
+            font-size: 45px;
+            color: #ffba00;
+            margin-bottom: 25px;
+            display: block;
+        }
+        .values-area {
+            background: #f9f9ff;
+        }
+        
+        /* --- DÜZELTME BAŞLANGICI --- */
+        /* Arama kutusunu varsayılan olarak gizler, böylece sayfa üstüne yapışmaz */
+        #search_input_box {
+            display: none;
+        }
+        /* --- DÜZELTME BİTİŞİ --- */
+    </style>
+</head>
+<body>
+
+    <header class="header_area sticky-header">
+		<div class="main_menu">
+			<nav class="navbar navbar-expand-lg navbar-light main_box">
+				<div class="container">
+					<a class="navbar-brand logo_h" href="index.html"><img src="img/logo.png" alt=""></a>
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+					 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Navigasyonu aç/kapa">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+						<ul class="nav navbar-nav menu_nav ml-auto">
+                            
+                            <li class="nav-item active"><a class="nav-link" href="index.html">Anasayfa</a></li>
+                            
+                           
+
+                            <li class="nav-item submenu dropdown">
+								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+								 aria-expanded="false">Mağaza</a>
+								<ul class="dropdown-menu">
+									<li class="nav-item"><a class="nav-link" href="category.html">Ürünler</a></li>
+									<li class="nav-item"><a class="nav-link" href="single-product.html">Ürün Ayrıntıları</a></li>
+									<li class="nav-item"><a class="nav-link" href="checkout.html">Ürün Ödemesi</a></li>
+									<li class="nav-item"><a class="nav-link" href="cart.html">Sepetim</a></li>
+									<li class="nav-item"><a class="nav-link" href="confirmation.html">Siparişim</a></li>
+								</ul>
+							</li>
+
+							 <li class="nav-item"><a class="nav-link" href="duyurular.html">Duyurular</a></li>
+
+                            <li class="nav-item submenu dropdown">
+								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+								 aria-expanded="false">Blog</a>
+								<ul class="dropdown-menu">
+									<li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+									<li class="nav-item"><a class="nav-link" href="single-blog.html">Blog Detayları</a></li>
+								</ul>
+							</li>
+                            
+                            <li class="nav-item submenu dropdown">
+								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+								 aria-expanded="false">Sayfalar</a>
+								<ul class="dropdown-menu">
+									<li class="nav-item"><a class="nav-link" href="login.html">Giriş Yap</a></li>
+									<li class="nav-item"><a class="nav-link" href="tracking.html">Sipariş Takibi</a></li>
+									<li class="nav-item"><a class="nav-link" href="elements.html">Elementler</a></li>
+								</ul>
+							</li>
+                            
+                            <li class="nav-item"><a class="nav-link" href="contact.html">İletişim</a></li>
+							
+							<li class="nav-item submenu dropdown">
+								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Kurumsal</a>
+								<ul class="dropdown-menu">
+									<li class="nav-item"><a class="nav-link" href="hakkimizda.html">Hakkımızda</a></li>
+									<li class="nav-item"><a class="nav-link" href="misyon-vizyon.html">Misyon & Vizyon</a></li>
+								</ul>
+							</li>
+						</ul>
+						<ul class="nav navbar-nav navbar-right">
+							<li class="nav-item"><a href="#" class="cart"><span class="ti-bag"></span></a></li>
+							<li class="nav-item">
+								<button class="search"><span class="lnr lnr-magnifier" id="search"></span></button>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</div>
+		<div class="search_input" id="search_input_box">
+			<div class="container">
+				<form class="d-flex justify-content-between">
+					<input type="text" class="form-control" id="search_input" placeholder="Burada Arayın">
+					<button type="submit" class="btn"></button>
+					<span class="lnr lnr-cross" id="close_search" title="Aramayı Kapat"></span>
+				</form>
+			</div>
+		</div>
+	</header>
+    <section class="banner-area organic-breadcrumb">
+		<div class="container">
+			<div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+				<div class="col-first">
+					<h1>Misyon & Vizyon</h1>
+					<nav class="d-flex align-items-center justify-content-center">
+						<a href="index.html">Anasayfa<span class="lnr lnr-arrow-right"></span></a>
+						<a href="misyon-vizyon.html">Misyon & Vizyon</a>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="section_gap">
+		<div class="container">
+			<div class="row">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="mv-box text-center">
+                        <span class="lnr lnr-rocket mv-icon"></span>
+                        <h2 class="mv-title">Misyonumuz</h2>
+                        <p class="text-justify">
+                            Müşterilerimize dünya standartlarında, sertifikalı ve güvenilir motosiklet ekipmanlarını erişilebilir fiyatlarla sunmak. Satış öncesi ve sonrası verdiğimiz teknik destek ile bilinçli sürücülerin artmasına katkıda bulunmak ve Türkiye'deki motosiklet kültürünün gelişimine öncülük etmektir. Amacımız sadece ürün satmak değil, müşterilerimizin yol güvenliğini en üst düzeye çıkarmaktır.
+                        </p>
+                    </div>
+				</div>
+                <div class="col-lg-6">
+                    <div class="mv-box text-center">
+                        <span class="lnr lnr-eye mv-icon"></span>
+                        <h2 class="mv-title">Vizyonumuz</h2>
+                        <p class="text-justify">
+                             Teknoloji ve inovasyonu e-ticaret süreçlerimize entegre ederek, Türkiye'nin lider motosiklet aksesuar mağazası olmak. Sadece ürün satan değil, geliştirdiği projeler ve düzenlediği etkinliklerle motorcu dostu bir ekosistem yaratan, global pazarda da tanınan güvenilir bir marka haline gelmek. Gelecekte kendi ekipman markamızı üreterek yerli üretime katkı sağlamak.
+                        </p>
+                    </div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+    <section class="section_gap values-area">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 text-center">
+					<div class="section-title">
+						<h1>Temel Değerlerimiz</h1>
+						<p>Bizi biz yapan ilkelerimiz</p>
+					</div>
+				</div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-features text-center">
+                        <span class="lnr lnr-diamond" style="font-size:30px; color:#ffba00;"></span>
+                        <h4 class="mt-3">Kalite</h4>
+                        <p>Sadece sertifikalı ve kendini kanıtlamış ürünler.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-features text-center">
+                        <span class="lnr lnr-users" style="font-size:30px; color:#ffba00;"></span>
+                        <h4 class="mt-3">Müşteri Odaklılık</h4>
+                        <p>Sizlerin güvenliği ve memnuniyeti önceliğimizdir.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-features text-center">
+                        <span class="lnr lnr-sync" style="font-size:30px; color:#ffba00;"></span>
+                        <h4 class="mt-3">İnovasyon</h4>
+                        <p>Sürekli gelişen teknolojiye ve trendlere uyum.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-area section_gap">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3  col-md-6 col-sm-6">
+					<div class="single-footer-widget">
+						<h6>Hakkımızda</h6>
+						<p>
+							Karma olarak, adımlarınızı daha konforlu ve şık hale getirmek için çıktığımız bu yolda, ayakkabı tutkusunu profesyonel hizmet anlayışıyla birleştiriyoruz. 1980 yılından bu yana, sektördeki tecrübemizle sizlere sadece bir ayakkabı değil, her adımda hissedilen bir kalite sunmayı hedefliyoruz.
+						</p>
+					</div>
+				</div>
+				<div class="col-lg-4  col-md-6 col-sm-6">
+					<div class="single-footer-widget">
+						<h6>Haberdar Olmak İster misiniz?</h6>
+						<p>Yeni indirimlerden Haberdar Kalın</p>
+						<div class="" id="mc_embed_signup">
+
+							<form target="_blank" novalidate="true" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
+							 method="get" class="form-inline">
+
+								<div class="d-flex flex-row">
+
+									<input class="form-control" name="EMAIL" placeholder="E-posta Girin" onfocus="this.placeholder = ''" onblur="this.placeholder = 'E-posta Girin '"
+									 required="" type="email">
+
+
+									<button class="click-btn btn btn-default"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></button>
+									<div style="position: absolute; left: -5000px;">
+										<input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
+									</div>
+
+									</div>
+								<div class="info"></div>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3  col-md-6 col-sm-6">
+					<div class="single-footer-widget mail-chimp">
+						<h6 class="mb-20">Instagram Gönderileri</h6>
+						<ul class="instafeed d-flex flex-wrap">
+							<li><img src="img/i1.jpg" alt=""></li>
+							<li><img src="img/i2.jpg" alt=""></li>
+							<li><img src="img/i3.jpg" alt=""></li>
+							<li><img src="img/i4.jpg" alt=""></li>
+							<li><img src="img/i5.jpg" alt=""></li>
+							<li><img src="img/i6.jpg" alt=""></li>
+							<li><img src="img/i7.jpg" alt=""></li>
+							<li><img src="img/i8.jpg" alt=""></li>
+						</ul>
+					</div>
+				</div>
+<div class="col-lg-2 col-md-6 col-sm-6">
+    <div class="single-footer-widget">
+        <h6>Bizi Takip Edin</h6>
+        <p></p>
+        <div class="footer-social d-flex align-items-center">
+            <a href="https://www.facebook.com/SAYFA_ADINIZ" target="_blank">
+                <i class="fa fa-facebook"></i>
+            </a>
+            
+            <a href="https://twitter.com/SAYFA_ADINIZ" target="_blank">
+                <i class="fa fa-twitter"></i>
+            </a>
+
+            <a href="https://www.instagram.com/SAYFA_ADINIZ" target="_blank">
+                <i class="fa fa-instagram"></i>
+            </a>
+            
+            <a href="https://dribbble.com/SAYFA_ADINIZ" target="_blank">
+                <i class="fa fa-dribbble"></i>
+            </a>
+            
+            <a href="https://www.behance.net/SAYFA_ADINIZ" target="_blank">
+                <i class="fa fa-behance"></i>
+            </a>
+        </div>
+    </div>
+</div>
+			</div>
+			<div class="footer-bottom d-flex justify-content-center align-items-center flex-wrap">
+				<p class="footer-text m-0">Copyright &copy;<script>document.write(new Date().getFullYear());</script> Tüm hakları saklıdır | Bu şablon <i class="fa fa-heart-o" aria-hidden="true"></i> ile <a href="https://colorlib.com" target="_blank">Colorlib</a> tarafından yapılmıştır.
+</p>
+			</div>
+		</div>
+	</footer>
+
+	<script src="js/vendor/jquery-2.2.4.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+	<script src="js/vendor/bootstrap.min.js"></script>
+	<script src="js/jquery.nice-select.min.js"></script>
+	<script src="js/jquery.sticky.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>
